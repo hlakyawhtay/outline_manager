@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "218757351334",
+    "project_id": "portfolio-c9b2b",
+    "storage_bucket": "portfolio-c9b2b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218757351334:android:b1aee905711b76e24c3167",
+        "android_client_info": {
+          "package_name": "com.mm_calendar.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCslpQknGuq5HAO9W7dplRm1oqP15uhMX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      },
+      "admob_app_id": "ca-app-pub-9315013703317691~3806592415"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218757351334:android:4ab16f1278ea7f3c4c3167",
+        "android_client_info": {
+          "package_name": "com.outlinemanager.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCslpQknGuq5HAO9W7dplRm1oqP15uhMX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

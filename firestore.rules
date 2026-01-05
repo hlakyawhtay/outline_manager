@@ -1,0 +1,38 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // All Outline data is stored under users/{uid}
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // Servers collection: users/{uid}/servers/{serverId}
+      match /servers/{serverId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Access keys collection: users/{uid}/access_keys/{accessKeyId}
+      match /access_keys/{accessKeyId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Future nested docs under users/{uid}/** inherit owner-only access
+      match /{document=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Deny all other top-level collections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
